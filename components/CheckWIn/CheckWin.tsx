@@ -6,14 +6,17 @@ const CheckWin = () => {
   const { getIsWinEachRound, isWin, roundId, claimReward } = useLottoStore();
 
   const [claimLoading, setClaimLoading] = useState<boolean>(false);
+  const [checkLoading, setCheckLoading] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
   const [round, setRound] = useState<number | undefined>(undefined);
 
   const handleCheckRound = async () => {
+    setCheckLoading(true);
     if (round) {
       await getIsWinEachRound(round);
       setChecked(true);
     }
+    setCheckLoading(false);
   };
 
   const handleClaim = async () => {
@@ -46,14 +49,14 @@ const CheckWin = () => {
               )}
             </div>
 
-            {!checked && (
+            {
               <button
                 onClick={handleCheckRound}
                 className="p-3 w-[170px] text-base text-black font-bold rounded-[20px] place-self-center bg-gradient bg-gradient-to-l from-[#F9A424] to-[#F9D724]"
               >
-                Check
+                {checkLoading ? "Loading ..." : "Check"}
               </button>
-            )}
+            }
             {checked && isWin && (
               <button
                 onClick={handleClaim}

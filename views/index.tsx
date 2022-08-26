@@ -26,26 +26,29 @@ const Lottory = () => {
       </Head>
       <Navbar />
 
-      <section className="w-full h-[400px] bg-[#0E0D32]">
-        <div className="container flex flex-col items-center justify-center mx-auto h-full">
-          <div className="place-self-center">
-            <div className="text-center text-white">
-              <p className="p-4 font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-t from-[#F9A424] to-[#F9F024]">
-                DAO
-                <span className="text-white">LOTTORY</span>
-              </p>
-              <p className="text-4xl ">
-                <span className="mr-2 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-[#F9A424] to-[#F9F024]">
-                  {prizePot}
-                </span>
-                in prizes
-              </p>
+      <section className=" bg-[#0E0D32]">
+        <div className="w-full h-[400px] bg-ball bg-no-repeat bg-cover">
+          <div className="container flex flex-col items-center justify-center mx-auto h-full ">
+            <div className="place-self-center">
+              <div className="text-center text-white">
+                <p className="p-4 font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-t from-[#F9A424] to-[#F9F024]">
+                  DAO
+                  <span className="text-white">LOTTORY</span>
+                </p>
+                <p className="text-4xl ">
+                  <span className="mr-2 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-[#F9A424] to-[#F9F024]">
+                    {prizePot}
+                  </span>
+                  in prizes
+                </p>
+              </div>
             </div>
+            {/* <button className="place-self-center p-2 mt-5 bg-gradient-to-l from-[#F9A424] to-[#F9D724] rounded-[18px] w-[241px] cursor-pointer">
+              BUY TICKET
+            </button> */}
           </div>
-          {/* <button className="place-self-center p-2 mt-5 bg-gradient-to-l from-[#F9A424] to-[#F9D724] rounded-[18px] w-[241px] cursor-pointer">
-            BUY TICKET
-          </button> */}
         </div>
+        
       </section>
 
       <BuyTicket />

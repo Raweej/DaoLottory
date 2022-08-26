@@ -57,7 +57,7 @@ const CheckWin = () => {
                 {checkLoading ? "Loading ..." : "Check"}
               </button>
             }
-            {checked && isWin && (
+            {checked && isWin && (round !== 0 || round !== undefined) && (
               <button
                 onClick={handleClaim}
                 className="p-3 w-[170px] text-base text-black font-bold rounded-[20px] place-self-center bg-gradient bg-gradient-to-l from-[#F9A424] to-[#F9D724]"
